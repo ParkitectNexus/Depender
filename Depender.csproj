@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA17F423-2365-4230-88E5-BD736956F809}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ClassLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>ToolLoader</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Parkitect\Parkitect_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Parkitect\Parkitect_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Parkitect\Parkitect_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mod.json" />
+    <None Include="README.md" />
+    <None Include="scenery.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Depender\Extras\GetExtra.cs" />
+    <Compile Include="Depender\HPDebug.cs" />
+    <Compile Include="Depender\Objects\CoasterCarMod.cs" />
+    <Compile Include="Depender\Objects\FlatRide\CustomFlatRide.cs" />
+    <Compile Include="Depender\Events\ApplyRotation.cs" />
+    <Compile Include="Depender\Events\ChangePendulum.cs" />
+    <Compile Include="Depender\Events\FromToMove.cs" />
+    <Compile Include="Depender\Events\FromToRot.cs" />
+    <Compile Include="Depender\HPMotors\MoverHP.cs" />
+    <Compile Include="Depender\HPMotors\MultipleRotationsHP.cs" />
+    <Compile Include="Depender\HPMotors\PendulumRotatorHP.cs" />
+    <Compile Include="Depender\HPMotors\RotateBetweenHP.cs" />
+    <Compile Include="Depender\HPMotors\RotatorHP.cs" />
+    <Compile Include="Depender\Main.cs" />
+    <Compile Include="Depender\Objects\CustomScenery\DecoMod.cs" />
+    <Compile Include="Depender\Objects\CustomScenery\FenceMod.cs" />
+    <Compile Include="Depender\Objects\CustomScenery\LampMod.cs" />
+    <Compile Include="Depender\Objects\CustomScenery\SeatingAutoMod.cs" />
+    <Compile Include="Depender\Objects\CustomScenery\SeatingMod.cs" />
+    <Compile Include="Depender\Objects\CustomScenery\TrashBinMod.cs" />
+    <Compile Include="Depender\Objects\FlatRide\FlatRideMod.cs" />
+    <Compile Include="Depender\Objects\FlatRide\RideAnimationMod.cs" />
+    <Compile Include="Depender\Objects\ModdedObject.cs" />
+    <Compile Include="Depender\Events\SpinRotater.cs" />
+    <Compile Include="Depender\Events\StartRotator.cs" />
+    <Compile Include="Depender\Events\StopRotator.cs" />
+    <Compile Include="Depender\Events\ToFromMove.cs" />
+    <Compile Include="Depender\Events\ToFromRot.cs" />
+    <Compile Include="Depender\Events\Wait.cs" />
+    <Compile Include="Depender\Objects\Shops\CustomShop.cs" />
+    <Compile Include="Depender\Objects\Shops\Products\ConsumableProductInstance.cs" />
+    <Compile Include="Depender\Objects\Shops\Products\OngoingEffectProductInstance.cs" />
+    <Compile Include="Depender\Objects\Shops\Products\WerableProductInstance.cs" />
+    <Compile Include="Depender\Objects\Shops\ShopMod.cs" />
+    <Compile Include="Depender\Registar.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Depender\Objects\Path\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
