@@ -35,7 +35,9 @@ namespace Depender
                     _customObjects.Add(buildableObject);
                     AssetManager.Instance.registerObject(buildableObject);
                 }
-                asset.transform.SetParent(_hider.transform);
+                if(_hider == null)
+                    _hider = new GameObject("DependerGO");
+                asset.transform.parent  = _hider.transform;
                 _hider.SetActive(false);
                 HPDebug.Log("Succelfully Registered: " + ModdedObject.Name);
                 return asset;
