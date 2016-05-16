@@ -3,7 +3,7 @@
     public class DecoMod : ModdedObject
     {
         public float HeightDelta;
-        public float GridSubdivision;
+        public float GridSubdivision = 1f;
         public bool SnapCenter;
         public bool BuildOnGrid;
         public string category;
