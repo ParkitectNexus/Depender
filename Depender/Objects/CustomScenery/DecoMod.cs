@@ -7,6 +7,7 @@
         public bool SnapCenter;
         public bool BuildOnGrid;
         public string category;
+        public float gridSubdivision;
 
         public override void Decorate()
         {
@@ -16,6 +17,7 @@
             deco.buildOnGrid = BuildOnGrid;
             deco.defaultSnapToGridCenter = SnapCenter;
             deco.categoryTag = category;
+            deco.defaultGridSubdivision = gridSubdivision;
             base.Decorate();
         }
     }
