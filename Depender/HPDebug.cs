@@ -7,7 +7,7 @@ namespace Depender
 {
     public class HPDebug : MonoBehaviour
     {
-        static bool EnableDebug = false;
+        static bool EnableDebug = true;
         static List<Message> Messages = new List<Message>();
         static int MaxSavedMessages = 50;
         public Rect windowRect = new Rect(20, 20, 120, 50);
@@ -39,8 +39,8 @@ namespace Depender
         }
         private static void MessageToLog(String text)
         {
-            StreamWriter sw = File.AppendText(Path + @"/mod.log");
-
+            string modPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            StreamWriter sw = File.AppendText(modPath + @"\mod.log");
             sw.WriteLine(text);
 
             sw.Flush();

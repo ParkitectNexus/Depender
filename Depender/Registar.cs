@@ -17,6 +17,7 @@ namespace Depender
 
         public static GameObject Register(ModdedObject ModdedObject)
         {
+            HPDebug.Log("");
             HPDebug.Log("Registering: " + ModdedObject.Name + " = Type: " + ModdedObject.GetType());
             try
             {
@@ -41,6 +42,7 @@ namespace Depender
                 asset.transform.parent  = _hider.transform;
                 _hider.SetActive(false);
                 HPDebug.Log("Succelfully Registered: " + ModdedObject.Name);
+                HPDebug.Log("");
                 return asset;
             }
 
@@ -48,8 +50,10 @@ namespace Depender
             {
 
                 HPDebug.LogError(e);
+                HPDebug.Log("");
                 return null;
             }
+
         }
 
         public enum PathType { Normal, Queue, Employee }
