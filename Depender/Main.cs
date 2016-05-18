@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Depender
 {
@@ -9,6 +11,8 @@ namespace Depender
         public void onEnabled()
         {
             Registar._hider = new GameObject("DependerGO");
+            HPDebug.Path = Path;
+
         }
 
         public void onDisabled()

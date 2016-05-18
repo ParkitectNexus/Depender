@@ -20,7 +20,6 @@ namespace Depender.Types.Shops
             List<GameObject> productsGO = new List<GameObject>();
             foreach (ProductMod P in products)
             {
-                Debug.Log(P.GetType().Name);
                 productsGO.Add(P.Decorate());
             }
             shop.productGOs = productsGO.ToArray();

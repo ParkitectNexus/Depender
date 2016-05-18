@@ -10,6 +10,7 @@ namespace Depender
         public static List<Product> _customProducts = new List<Product>();
 
         public static GameObject _hider;
+        public static GameObject path;
 
         public enum PathTypes { Normal, Queue, Employee }
 
@@ -46,7 +47,7 @@ namespace Depender
             catch (System.Exception e)
             {
 
-                HPDebug.LogError(e.Message);
+                HPDebug.LogError(e);
                 return null;
             }
         }

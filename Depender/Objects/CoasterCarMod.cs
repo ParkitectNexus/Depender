@@ -14,12 +14,10 @@ namespace Depender.Types
 
         public override void Decorate()
         {
-            Debug.Log("Coaster Car test: " + CoasterName);
             List<Attraction> attractions = AssetManager.Instance.getAttractionObjects().ToList();
             foreach (TrackedRide attraction in attractions.OfType<TrackedRide>())
             {
-                Debug.Log(attraction.getName());
-                if (attraction.getName() == CoasterName)
+                if (attraction.getUnlocalizedName() == CoasterName)
                 {
                     List<CoasterCarInstantiator> TypeList = attraction.carTypes.ToList();
                     CoasterCarInstantiator CarType = ScriptableObject.CreateInstance<CoasterCarInstantiator>();
@@ -48,7 +46,6 @@ namespace Depender.Types
             string shader;
             if (Recolorable)
             {
-                Debug.Log("Recolorable! : " + Shader);
                 CustomColors cc = Object.AddComponent<CustomColors>();
                 cc.setColors(Colors);
                 shader = "CustomColors" + Shader;
@@ -88,7 +85,6 @@ namespace Depender.Types
                 
                 if (Recolorable)
                 {
-                    Debug.Log("Recolorable! : " + Shader);
                     CustomColors cc = FrontCarGO.AddComponent<CustomColors>();
                     cc.setColors(Colors);
                     shader = "CustomColors" + Shader;

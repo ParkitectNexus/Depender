@@ -19,7 +19,7 @@ namespace Depender.Types
 
         public virtual void Decorate()
         {
-            Debug.Log("Decorating: " + Name);
+            HPDebug.Log("Decorating: " + Name);
             BuildableObject BO = Object.GetComponent<BuildableObject>();
             BO.price = Price;
             BO.setDisplayName(Name);
@@ -28,7 +28,6 @@ namespace Depender.Types
             string shader;
             if (Recolorable)
             {
-                Debug.Log("Recolorable! : " + Shader);
                 CustomColors cc = Object.AddComponent<CustomColors>();
                 cc.setColors(Colors);
                 shader = "CustomColors" + Shader;

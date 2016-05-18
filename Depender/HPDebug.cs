@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 namespace Depender
@@ -7,10 +8,11 @@ namespace Depender
     public class HPDebug : MonoBehaviour
     {
         static bool EnableDebug = true;
-        static List<Message> Messages;
+        static List<Message> Messages = new List<Message>();
         static int MaxSavedMessages = 50;
         public Rect windowRect = new Rect(20, 20, 120, 50);
         private Vector2 scrollPosition;
+        public static string Path;
 
         public class Message
         {
@@ -23,19 +25,28 @@ namespace Depender
         {
             if (EnableDebug)
             {
-                Debug.Log("[HP Registar] ===(" + message + ")===");
+                MessageToLog("[HP Registar] ===(" + message + ")===");
             }
             //AddMessage(message, Message.Types.Log);
         }
-        public static void LogError(string message)
+        public static void LogError(System.Exception error)
         {
             if (EnableDebug)
             {
-                Debug.Log("[HP Registar] (ERROR) ===(" + message + ")===");
+                MessageToLog("! [HP Registar] (ERROR) ===(" + error + ")===");
             }
             //AddMessage(message, Message.Types.Error);
         }
+        private static void MessageToLog(String text)
+        {
+            StreamWriter sw = File.AppendText(Path + @"/mod.log");
 
+            sw.WriteLine(text);
+
+            sw.Flush();
+
+            sw.Close();
+        }
         public static void AddMessage(string message, Message.Types Type)
         {
             Message m = new Message();
