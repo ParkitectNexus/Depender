@@ -7,7 +7,7 @@ namespace Depender
 {
     public class HPDebug : MonoBehaviour
     {
-        static bool EnableDebug = false;
+        static bool EnableDebug = true;
         static List<Message> Messages = new List<Message>();
         static int MaxSavedMessages = 50;
         public Rect windowRect = new Rect(20, 20, 120, 50);
