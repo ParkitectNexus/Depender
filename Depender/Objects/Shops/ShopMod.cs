@@ -17,6 +17,7 @@ namespace Depender.Types.Shops
         public override void Decorate()
         {
             CustomShop shop = Object.AddComponent<CustomShop>();
+            shop.walkableFlag = Block.WalkableFlagType.FORWARD;
             List<GameObject> productsGO = new List<GameObject>();
             foreach (ProductMod P in products)
             {
@@ -42,16 +43,15 @@ namespace Depender.Types.Shops
         public hand Hand = hand.Left;
         [SerializeField]
         public List<ingredient> ingredients = new List<ingredient>();
-        ingredient selected;
+        private ingredient selected;
         private Vector2 scrollPos;
         public virtual GameObject Decorate()
         {
 
             Product P = GO.GetComponent<Product>();
-
+            
             P.defaultPrice = price;
-
-
+            
             switch (Hand)
             {
                 case hand.Left:
@@ -158,6 +158,8 @@ namespace Depender.Types.Shops
         public override GameObject Decorate()
         {
             ConsumableProduct CP = GO.AddComponent<ConsumableProductInstance>();
+            
+            CP.trash = AssetManager.Instance.getPrefab(Prefabs.CandyTrash).gameObject;
 
             BindingFlags flags = BindingFlags.GetField | BindingFlags.Instance | BindingFlags.NonPublic;
             typeof(Product).GetField("displayName", flags).SetValue(CP, Name);
