@@ -37,7 +37,7 @@ namespace Depender.Types.Shops
         [SerializeField]
         public GameObject GO = new GameObject();
         [SerializeField]
-        public int price = 10;
+        public float price = 10;
         public enum hand { Left, Right }
         [SerializeField]
         public hand Hand = hand.Left;
@@ -234,7 +234,7 @@ namespace Depender.Types.Shops
         [SerializeField]
         public string Name = "New Ingredient";
         [SerializeField]
-        public int price = 1;
+        public float price = 1;
         [SerializeField]
         public float amount = 1;
         [SerializeField]
