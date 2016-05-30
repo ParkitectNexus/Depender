@@ -185,13 +185,13 @@ namespace Depender.Types.Shops
             switch (Temprature)
             {
                 case temprature.none:
-                    CP.temperaturePreference = ConsumableProduct.TemperaturePreference.NONE;
+                    CP.temperaturePreference = TemperaturePreference.NONE;
                     break;
                 case temprature.cold:
-                    CP.temperaturePreference = ConsumableProduct.TemperaturePreference.COLD;
+                    CP.temperaturePreference = TemperaturePreference.COLD;
                     break;
                 case temprature.hot:
-                    CP.temperaturePreference = ConsumableProduct.TemperaturePreference.HOT;
+                    CP.temperaturePreference = TemperaturePreference.HOT;
                     break;
                 default:
                     break;
