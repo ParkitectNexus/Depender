@@ -37,6 +37,10 @@ namespace Depender
                     _customObjects.Add(buildableObject);
                     AssetManager.Instance.registerObject(buildableObject);
                 }
+                if(asset.GetComponent<Deco>())
+                {
+                    asset.GetComponent<Deco>().buildOnLayerMask = LayerMasks.TERRAIN;
+                }
                 if(_hider == null)
                     _hider = new GameObject("DependerGO");
                 asset.transform.parent  = _hider.transform;
