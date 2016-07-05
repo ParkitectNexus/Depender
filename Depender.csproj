@@ -62,6 +62,7 @@
     <Compile Include="Depender\Extras\GetExtra.cs" />
     <Compile Include="Depender\HPDebug.cs" />
     <Compile Include="Depender\Objects\CoasterCarMod.cs" />
+    <Compile Include="Depender\Objects\CustomScenery\WallMod.cs" />
     <Compile Include="Depender\Objects\FlatRide\CustomFlatRide.cs" />
     <Compile Include="Depender\Events\ApplyRotation.cs" />
     <Compile Include="Depender\Events\ChangePendulum.cs" />
