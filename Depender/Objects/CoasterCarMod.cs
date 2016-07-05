@@ -21,6 +21,9 @@ namespace Depender.Types
                 {
                     List<CoasterCarInstantiator> TypeList = attraction.carTypes.ToList();
                     CoasterCarInstantiator CarType = ScriptableObject.CreateInstance<CoasterCarInstantiator>();
+                    CarType.defaultTrainLength = 5;
+                    CarType.minTrainLength = 1;
+                    CarType.maxTrainLength = 10;
                     AssetManager.Instance.registerObject(Object.AddComponent<Car>());
                     CarType.carGO = Object;
                     if (FrontCarGO != null)
