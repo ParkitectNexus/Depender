@@ -43,8 +43,6 @@ namespace Depender.Types.Shops
         public hand Hand = hand.Left;
         [SerializeField]
         public List<ingredient> ingredients = new List<ingredient>();
-        private ingredient selected;
-        private Vector2 scrollPos;
         public virtual GameObject Decorate()
         {
 
@@ -68,7 +66,7 @@ namespace Depender.Types.Shops
                 var resource = ScriptableObject.CreateInstance<Resource>();
                 resource.name = I.Name;
                 resource.setDisplayName(I.Name);
-                resource.costs = I.price;
+                resource.setCosts(I.price);
                 resource.getResourceSettings().percentage = 1f;
                 List<ConsumableEffect> consumableEffects = new List<ConsumableEffect>();
                 foreach (effect E in I.effects)
@@ -159,7 +157,7 @@ namespace Depender.Types.Shops
         {
             ConsumableProduct CP = GO.AddComponent<ConsumableProductInstance>();
             
-            CP.trash = AssetManager.Instance.getPrefab(Prefabs.CandyTrash).gameObject;
+            CP.trash = AssetManager.Instance.getPrefab(Prefabs.CandyTrash).GetComponent<Trash>();
 
             BindingFlags flags = BindingFlags.GetField | BindingFlags.Instance | BindingFlags.NonPublic;
             typeof(Product).GetField("displayName", flags).SetValue(CP, Name);

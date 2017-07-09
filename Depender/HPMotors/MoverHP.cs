@@ -32,7 +32,7 @@ namespace Depender.AnimationMotors
 
         public override void GetAxis(GameObject GO)
         {
-            axis = GO.transform.FindChild(axisPath);
+            axis = GO.transform.Find(axisPath);
             base.GetAxis(GO);
         }
         public override void Reset()

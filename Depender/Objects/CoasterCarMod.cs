@@ -25,11 +25,11 @@ namespace Depender.Types
                     CarType.minTrainLength = 1;
                     CarType.maxTrainLength = 10;
                     AssetManager.Instance.registerObject(Object.AddComponent<Car>());
-                    CarType.carGO = Object;
+                    CarType.vehicleGO = Object.GetComponent<Car>();
                     if (FrontCarGO != null)
                     {
                         AssetManager.Instance.registerObject(FrontCarGO.AddComponent<Car>());
-                        CarType.frontCarGO = FrontCarGO;
+                        CarType.frontVehicleGO = FrontCarGO.GetComponent<Car>();
                     }
                     CarType.displayName = Name;
                     CarType.name = Name;

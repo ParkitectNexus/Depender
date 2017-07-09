@@ -12,11 +12,8 @@ namespace Depender.AnimationEvents
     {
 
         public PendulumRotatorHP rotator;
-        float lastTime;
         public float Friction = 20f;
         public bool Pendulum;
-        private float startPendulumPosition;
-        private float windUpAngleTarget = 100f;
         public override void Check(CustomFlatRide RA)
         {
             foreach (PendulumRotatorHP R in RA.motors.OfType<PendulumRotatorHP>().ToList())

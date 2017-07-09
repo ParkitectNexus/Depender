@@ -30,10 +30,10 @@ namespace Depender.AnimationMotors
         }
         public override void GetAxis(GameObject GO)
         {
-            mainAxis = GO.transform.FindChild(axisPath);
+            mainAxis = GO.transform.Find(axisPath);
             foreach (string path in AxissPath)
             {
-                Axiss.Add(GO.transform.FindChild(path));
+                Axiss.Add(GO.transform.Find(path));
             }
             base.GetAxis(GO);
         }
