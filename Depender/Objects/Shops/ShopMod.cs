@@ -18,12 +18,12 @@ namespace Depender.Types.Shops
         {
             CustomShop shop = Object.AddComponent<CustomShop>();
             shop.walkableFlag = Block.WalkableFlagType.FORWARD;
-            List<GameObject> productsGO = new List<GameObject>();
+			List<Product> productsGO = new List<Product>();
             foreach (ProductMod P in products)
             {
                 productsGO.Add(P.Decorate());
             }
-            shop.productGOs = productsGO.ToArray();
+			shop.products = productsGO.ToArray();
             base.Decorate();
 
         }
@@ -43,7 +43,7 @@ namespace Depender.Types.Shops
         public hand Hand = hand.Left;
         [SerializeField]
         public List<ingredient> ingredients = new List<ingredient>();
-        public virtual GameObject Decorate()
+		public virtual Product Decorate()
         {
 
             Product P = GO.GetComponent<Product>();
@@ -103,7 +103,7 @@ namespace Depender.Types.Shops
             }
             P.ingredients = ingredientsMod.ToArray();
 
-            return GO;
+            return P;
         }
 
 
@@ -116,7 +116,7 @@ namespace Depender.Types.Shops
         public enum bodylocation { head, face, back }
         [SerializeField]
         public bodylocation BodyLocation = bodylocation.head;
-        public override GameObject Decorate()
+		public override Product Decorate()
         {
             WearableProduct WP = GO.AddComponent<WerableProductInstance>();
 
@@ -153,7 +153,7 @@ namespace Depender.Types.Shops
         public temprature Temprature;
         [SerializeField]
         public int portions;
-        public override GameObject Decorate()
+		public override Product Decorate()
         {
             ConsumableProduct CP = GO.AddComponent<ConsumableProductInstance>();
             
@@ -203,7 +203,7 @@ namespace Depender.Types.Shops
     {
         [SerializeField]
         public int duration;
-        public override GameObject Decorate()
+		public override Product Decorate()
         {
             OngoingEffectProductInstance WP = GO.AddComponent<OngoingEffectProductInstance>();
 
